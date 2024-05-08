@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добро пожаловать &ndash; Сельмаг</title>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Товар</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="product: ${products}">
+                <td data-th-each="${product.id}"></td>
+                <td>
+                    <a data-th-href="@{/cataloge/products/{productId}(product.id=${product.id})}"
+                       data-th-each="${product.title}></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
